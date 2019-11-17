@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import api from "../../Services/api";
 import { getTodos } from "../../Store/Actions/todos";
+import todosStyle from "./todos.module.scss";
 
 const TodosList = props => {
   const fetchTodos = async () => {
@@ -18,9 +19,11 @@ const TodosList = props => {
   }, []);
 
   return (
-    <div>
+    <div className={todosStyle.Todos}>
       {props.todos.map(todo => (
-        <p key={todo.id}>{todo.title}</p>
+        <p className={todosStyle.Item} key={todo.id}>
+          {todo.title}
+        </p>
       ))}
     </div>
   );
