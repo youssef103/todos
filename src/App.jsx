@@ -1,12 +1,13 @@
 import React from "react";
-import style from "./App.module.scss";
-import { TodosList } from "./Components/Todos/TodosList";
+import { Provider } from "react-redux";
+import { store } from "./Store";
+import TodosList from "./Components/Todos/TodosList";
 
 function App() {
   return (
-    <div className={style.App}>
+    <Provider store={store}>
       <TodosList />
-    </div>
+    </Provider>
   );
 }
 
