@@ -27,9 +27,7 @@ export const NavbarComponent = props => {
             <NavLink href="/components/">Components</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="https://github.com/reactstrap/reactstrap">
-              GitHub
-            </NavLink>
+            <NavLink href="https://github.com/youssef103/todos">GitHub</NavLink>
           </NavItem>
           <UncontrolledDropdown nav inNavbar>
             <DropdownToggle nav caret>
