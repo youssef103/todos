@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { ProtectedRoute } from "./Config";
 import { AdminRouter } from "./AdminRoute";
-import { CustomerRoute } from "./CustomerRoute";
+import { CustomerRoutes } from "./CustomerRoute";
 
 import TodosList from "../../Components/Todos/TodosList";
 import { NotFound } from "../../Components/NotFound";
@@ -29,7 +29,7 @@ export default props => {
         <Route exact path="/" component={TodosList} />
         <Route exact path="/test" render={() => "Test component"} />
         {RenderAdminRouters}
-        <CustomerRoute isCustomer={false} />
+        <CustomerRoutes isCustomer={false} />
         <Route path="/not-found" component={NotFound} />
         <Redirect to="/not-found" />
       </Switch>

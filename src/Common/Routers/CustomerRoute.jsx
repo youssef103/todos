@@ -5,15 +5,15 @@ import { Customer } from "../../Components/Customer/Customer";
 import { CustomerTest } from "../../Components/Customer/CustomerTest";
 import { CustomerProfile } from "../../Components/Customer/CustomerProfile";
 
-export const CustomerRouter = [
+const routes = [
   { path: "/customer", component: Customer },
   { path: "/customer/profile", component: CustomerProfile },
   { path: "/customer/test", component: CustomerTest }
 ];
 
-export const CustomerRoute = ({ isCustomer = false }) => (
+export const CustomerRoutes = ({ isCustomer = false }) => (
   <Switch>
-    {CustomerRouter.map(customer => (
+    {routes.map(customer => (
       <PublicRoute
         key={customer.path}
         exact
