@@ -1,14 +1,21 @@
 import React from "react";
+import { ConnectedRouter } from "connected-react-router";
 import { Provider } from "react-redux";
-import { store } from "./Store";
-import TodosList from "./Components/Todos/TodosList";
-import { NavbarComponent } from "./Common/NavBar/NavBar";
+import { store, history } from "./Store";
 
-function App() {
+import { Container } from "reactstrap";
+import { NavbarComponent } from "./Common/NavBar/NavBar";
+import Routers from "./Common/Routers";
+
+function App(props) {
   return (
     <Provider store={store}>
-      <NavbarComponent />
-      <TodosList />
+      <ConnectedRouter history={history}>
+        <NavbarComponent />
+        <Container>
+          <Routers />
+        </Container>
+      </ConnectedRouter>
     </Provider>
   );
 }

@@ -1,19 +1,33 @@
 .Todos {
     display: flex;
     flex-direction: column;
-    width: 80vw;
     padding: 10px;
     margin: 20px auto;
+    background: #ffffff;
     border: 2px solid #cccccc;
+    box-shadow: 0 0 13px rgba(0, 0, 0, .2);
 
 
-    .Item:not(:last-child) {
-        border-bottom: 1px solid #cccccc;
+    .Item {
+        display: flex;
         margin-bottom: 0;
         padding: .5rem;
+        transition: all .6s;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #cccccc;
+
+        }
 
         &:hover {
-            background: #eeeeee;
+            background: #333a40;
+            color: #fff;
+            font-weight: bold;
+            transform: scale(1.03);
+        }
+
+        &>span:first-child {
+            flex-grow: 1;
         }
     }
 
