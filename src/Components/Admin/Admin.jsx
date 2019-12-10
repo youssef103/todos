@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Admin = () => {
+export const Admin = props => {
   return <div>Admin</div>;
 };

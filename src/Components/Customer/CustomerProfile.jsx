@@ -1,5 +1,5 @@
 import React from "react";
 
-export const CustomerProfile = () => {
+export const CustomerProfile = props => {
   return <div>CustomerProfile</div>;
 };
