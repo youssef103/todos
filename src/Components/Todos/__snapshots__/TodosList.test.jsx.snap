@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render TodosList correctly 1`] = `
+<Status
+  todos={
+    Array [
+      Object {
+        "completed": false,
+        "id": 1,
+        "title": "delectus aut autem",
+        "userId": 1,
+      },
+      Object {
+        "completed": false,
+        "id": 2,
+        "title": "quis ut nam facilis et officia qui",
+        "userId": 1,
+      },
+      Object {
+        "completed": false,
+        "id": 3,
+        "title": "fugiat veniam minus",
+        "userId": 1,
+      },
+      Object {
+        "completed": true,
+        "id": 4,
+        "title": "et porro tempora",
+        "userId": 1,
+      },
+      Object {
+        "completed": false,
+        "id": 5,
+        "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
+        "userId": 1,
+      },
+      Object {
+        "completed": false,
+        "id": 6,
+        "title": "qui ullam ratione quibusdam voluptatem quia omnis",
+        "userId": 1,
+      },
+    ]
+  }
+>
+  <div
+    className="Todos"
+  >
+    <label
+      className="Item"
+      htmlFor={1}
+      key="1"
+    >
+      <span>
+        delectus aut autem
+      </span>
+      <span>
+        <input
+          id={1}
+          name={1}
+          type="checkbox"
+        />
+      </span>
+    </label>
+    <label
+      className="Item"
+      htmlFor={2}
+      key="2"
+    >
+      <span>
+        quis ut nam facilis et officia qui
+      </span>
+      <span>
+        <input
+          id={2}
+          name={2}
+          type="checkbox"
+        />
+      </span>
+    </label>
+    <label
+      className="Item"
+      htmlFor={3}
+      key="3"
+    >
+      <span>
+        fugiat veniam minus
+      </span>
+      <span>
+        <input
+          id={3}
+          name={3}
+          type="checkbox"
+        />
+      </span>
+    </label>
+    <label
+      className="Item"
+      htmlFor={4}
+      key="4"
+    >
+      <span>
+        et porro tempora
+      </span>
+      <span>
+        <input
+          id={4}
+          name={4}
+          type="checkbox"
+        />
+      </span>
+    </label>
+    <label
+      className="Item"
+      htmlFor={5}
+      key="5"
+    >
+      <span>
+        laboriosam mollitia et enim quasi adipisci quia provident illum
+      </span>
+      <span>
+        <input
+          id={5}
+          name={5}
+          type="checkbox"
+        />
+      </span>
+    </label>
+    <label
+      className="Item"
+      htmlFor={6}
+      key="6"
+    >
+      <span>
+        qui ullam ratione quibusdam voluptatem quia omnis
+      </span>
+      <span>
+        <input
+          id={6}
+          name={6}
+          type="checkbox"
+        />
+      </span>
+    </label>
+  </div>
+</Status>
+`;
+
+exports[`should render TodosList with empty message 1`] = `
+<Status
+  todos={Array []}
+>
+  <div
+    className="Todos"
+  >
+    <p>
+      Todos list is empty
+    </p>
+  </div>
+</Status>
+`;

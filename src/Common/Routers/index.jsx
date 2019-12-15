@@ -9,8 +9,8 @@ import { ProtectedRoute } from "./Config";
 import { AdminRouter } from "./AdminRoute";
 import { CustomerRoutes } from "./CustomerRoute";
 
-import TodosList from "../../Components/Todos/TodosList";
-import { NotFound } from "../../Components/NotFound";
+import TodosListContainer from "../../Components/Todos/TodosListContainer";
+import { NotFound } from "../../Components/notFound/NotFound";
 
 export default props => {
   const RenderAdminRouters = AdminRouter.map(admin => (
@@ -26,7 +26,7 @@ export default props => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={TodosList} />
+        <Route exact path="/" component={TodosListContainer} />
         <Route exact path="/test" render={() => "Test component"} />
         {RenderAdminRouters}
         <CustomerRoutes isCustomer={false} />

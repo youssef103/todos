@@ -1,7 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render Admin 1`] = `
+exports[`Should render Admin by mount 1`] = `
 <div>
-  Admin
+  <p>
+    Admin
+  </p>
+</div>
+`;
+
+exports[`Should render Admin by render 1`] = `
+<div>
+  <p>
+    Admin
+  </p>
+</div>
+`;
+
+exports[`Should render Admin by shalow 1`] = `
+<div>
+  <p>
+    Admin
+  </p>
 </div>
 `;
