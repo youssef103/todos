@@ -13,5 +13,4 @@ test("Should render Admin by render", () => {
 test("Should render Admin by mount", () => {
   const wrapper = mount(<Admin />);
   expect(wrapper).toMatchSnapshot();
-  expect(2).toBe(1);
 });
