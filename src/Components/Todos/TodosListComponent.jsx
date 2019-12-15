@@ -1,6 +1,7 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, Fragment } from "react";
+
 import Status from "../../Common/Status";
-import todosStyle from "./todos.module.scss";
+import { Pagination } from "../../Common/Pagination/Pagination";
 
 export const TodosListComponent = props => {
   // eslint-disable-next-line
@@ -20,17 +21,9 @@ export const TodosListComponent = props => {
 
   return (
     <Status {...props}>
-      <div className={todosStyle.Todos}>
-        {props.todos.length === 0 && <p>Todos list is empty</p>}
-        {props.todos.map(todo => (
-          <label htmlFor={todo.id} className={todosStyle.Item} key={todo.id}>
-            <span>{todo.title}</span>
-            <span>
-              <input type="checkbox" name={todo.id} id={todo.id} />
-            </span>
-          </label>
-        ))}
-      </div>
+      <Fragment>
+        <Pagination data={props.todos} recordsPerPage={10} />
+      </Fragment>
     </Status>
   );
 };
