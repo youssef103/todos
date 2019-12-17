@@ -1,28 +1,21 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import todosStyle from "../../Components/Todos/todos.module.scss";
 
-export const Pagination = ({ recordsPerPage, data }) => {
+export const Pagination = ({ recordsPerPage, data, component: Component }) => {
   // state
   const [currentPage, setCurrentPage] = useState(1);
   const [nextLink, setNextLink] = useState(2);
   const [prevLink, setPrevLink] = useState(1);
+  const totalrecords= data.length;
+  const pageNumbers = Array.from({length: Math.ceil(totalrecords / recordsPerPage)}).map((x, i) => i+1);
 
-  const totalRecords = data.length;
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(totalRecords / recordsPerPage); i++) {
-    pageNumbers.push(i);
-  }
   const totalPages = pageNumbers.length;
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
 
-  //const pageNeighbours = 18;
   // changePage Handler
-  const onPageChanged = pageNumber => {
-    //const curPage = Math.max(1, Math.min(pageNumber, totalPages));
-
+  const onPageChanged = async pageNumber => {
     setNextLink(pageNumber < totalPages ? pageNumber + 1 : totalPages);
     setPrevLink(pageNumber > 1 ? pageNumber - 1 : 1);
 
@@ -44,29 +37,11 @@ export const Pagination = ({ recordsPerPage, data }) => {
 
   return (
     <Fragment>
-      <div className={todosStyle.Todos}>
-        {data.length === 0 && <p>Todos list is empty</p>}
-        {currentRecords.map(todo => (
-          <label htmlFor={todo.id} className={todosStyle.Item} key={todo.id}>
-            <span>{todo.title}</span>
-            <span>
-              <input type="checkbox" name={todo.id} id={todo.id} />
-            </span>
-          </label>
-        ))}
-      </div>
+      <Component currentRecords={currentRecords}  />
 
+      <p>{`${indexOfLastRecord} / ${totalrecords} Records`}</p>
       <nav>
         <ul className="pagination">
-          <li>
-            <NavLink
-              to={`?page=${1}`}
-              className="page-link"
-              onClick={() => handleMoveLeft(1)}
-            >
-              First
-            </NavLink>
-          </li>
           <li>
             <NavLink
               to={`?page=${prevLink}`}
@@ -100,16 +75,6 @@ export const Pagination = ({ recordsPerPage, data }) => {
               disabled={currentPage > totalPages}
             >
               Next
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink
-              to={`?page=${totalPages}`}
-              className="page-link"
-              onClick={() => handleMoveRight(totalPages)}
-            >
-              Last
             </NavLink>
           </li>
         </ul>

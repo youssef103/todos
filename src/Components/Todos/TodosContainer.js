@@ -1,6 +1,6 @@
 import {
-    TodosListComponent
-} from './TodosListComponent';
+    TodosComponent
+} from './TodosComponent';
 import {
     getTodos
 } from "../../Store/Actions/todos";
@@ -27,5 +27,5 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-const TodosListContainer = connect(mapStateToProps, mapDispatchToProps)(TodosListComponent);
-export default TodosListContainer;
+const TodosContainer = connect(mapStateToProps, mapDispatchToProps)(TodosComponent);
+export default TodosContainer;

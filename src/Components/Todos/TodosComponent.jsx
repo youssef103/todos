@@ -1,9 +1,10 @@
-import React, { useEffect, useCallback, Fragment } from "react";
+import React, { useEffect, useCallback } from "react";
+import {TodosList} from './TodosList'
 
 import Status from "../../Common/Status";
 import { Pagination } from "../../Common/Pagination/Pagination";
 
-export const TodosListComponent = props => {
+export const TodosComponent = props => {
   // eslint-disable-next-line
   const fetchTodos = useCallback(async () => {
     props.getAllTodos();
@@ -18,12 +19,9 @@ export const TodosListComponent = props => {
 
     // eslint-disable-next-line
   }, []);
-
   return (
     <Status {...props}>
-      <Fragment>
-        <Pagination data={props.todos} recordsPerPage={10} />
-      </Fragment>
+        <Pagination data={props.todos} recordsPerPage={20} component={TodosList} />
     </Status>
   );
 };
