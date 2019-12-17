@@ -44,6 +44,7 @@ exports[`should render TodosList correctly 1`] = `
   }
 >
   <Pagination
+    component={[Function]}
     data={
       Array [
         Object {
@@ -84,7 +85,7 @@ exports[`should render TodosList correctly 1`] = `
         },
       ]
     }
-    recordsPerPage={10}
+    recordsPerPage={20}
   />
 </Status>
 `;
@@ -94,8 +95,9 @@ exports[`should render TodosList with empty message 1`] = `
   todos={Array []}
 >
   <Pagination
+    component={[Function]}
     data={Array []}
-    recordsPerPage={10}
+    recordsPerPage={20}
   />
 </Status>
 `;
