@@ -4,15 +4,13 @@ import {
   FETCH_TODOS_FAILURE
 } from "../Types";
 import api from "../../Services/api";
-import {
-  todos as data
-} from '../../../fixture/todos'
+
 
 export const getTodos = () => async dispatch => {
   dispatch(fetchTodos());
 
   try {
-    const todos = await api.getAll("todos") ;
+    const todos = await api.getAll("todos");
     //const todos = process.env.NODE_ENV !== 'test' ? await api.getAll("todos") : data;
     dispatch(fetchTodosSuccess(todos));
   } catch (error) {
